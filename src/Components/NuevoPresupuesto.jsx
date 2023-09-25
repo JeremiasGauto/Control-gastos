@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NuevoPresupuesto() {
+function NuevoPresupuesto({presupuesto, setPresupuesto}) {
   return (
       <div className="contenedor-presupuesto contenedor sombra">
           
@@ -12,6 +12,9 @@ function NuevoPresupuesto() {
                       className='nuevo-presupuesto'
                       type="text"
                       placeholder="añade tu presupuesto"
+                      value={presupuesto}
+                      onChange={e =>setPresupuesto(e.target.value)}
+                      
                   
                   />
               </div>

@@ -1,12 +1,16 @@
 import React from 'react'
 import NuevoPresupuesto from './NuevoPresupuesto'
 
-function Header() {
+function Header({presupuesto, setPresupuesto}) {
   return (
       <header>
           <h1>Planificador de gastos</h1>
 
-          <NuevoPresupuesto />
+      <NuevoPresupuesto
+      presupuesto={presupuesto}
+      setPresupuesto = {setPresupuesto}
+      
+      />
     </header>
   )
 }
