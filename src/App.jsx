@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './Components/Header'
 import Modal from './Components/Modal';
+import ListadoGastos from './Components/ListadoGastos';
 import { generarId } from './helpers';
 import iconoNuevoGasto from './assets/nuevo-gasto.svg'
 
@@ -26,7 +27,8 @@ function App() {
   }
 
   const guardarGasto = gasto => {
-    gasto.id= generarId();
+    gasto.id = generarId();
+    gasto.fecha = Date.now();
     setGastos([...gastos, gasto])
 
     setAnimarModal(false);
@@ -34,12 +36,12 @@ function App() {
     setTimeout(() => {
       setModal(false);
     }, 500);
-   
- }
+
+  }
 
 
   return (
-    <div>
+    <div className={modal && 'fijar' }>
       <Header
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
@@ -48,14 +50,21 @@ function App() {
       />
 
       {isValidPresupuesto && (
+        <>
+          <main>
+            <ListadoGastos
+              gastos={gastos}
+            />
+          </main>
 
-        <div className='nuevo-gasto'>
-          <img
-            src={iconoNuevoGasto}
-            alt="iconoNuevoGasto"
-            onClick={handleNuevoGasto}
-          />
-        </div>
+          <div className='nuevo-gasto'>
+            <img
+              src={iconoNuevoGasto}
+              alt="iconoNuevoGasto"
+              onClick={handleNuevoGasto}
+            />
+          </div>
+        </>
       )}
 
       {modal && <Modal
