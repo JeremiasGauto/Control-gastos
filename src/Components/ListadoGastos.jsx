@@ -2,7 +2,7 @@ import React from 'react'
 import Gasto from './Gasto'
 
 
-function ListadoGastos({ gastos, setGastoEditar }) {
+function ListadoGastos({ gastos, setGastoEditar, eliminarGatos }) {
     return (
 
         <div className='Listado-gastos contenedor'>
@@ -13,6 +13,7 @@ function ListadoGastos({ gastos, setGastoEditar }) {
                     key={gasto.id}
                     gasto={gasto}
                     setGastoEditar={setGastoEditar}
+                    eliminarGatos={eliminarGatos}
                 />
                 
             ))}
