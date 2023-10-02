@@ -54,7 +54,7 @@ function ControlPresupuesto({
     }
 
     return (
-        <div className="contenedor- presupuesto contenedor sombra dos-columnas">
+        <div className="contenedor-presupuesto contenedor sombra dos-columnas">
             <div>
                 <CircularProgressbar
                     styles={buildStyles({
