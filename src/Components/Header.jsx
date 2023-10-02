@@ -7,7 +7,8 @@ function Header({
   setPresupuesto,
   isValidPresupuesto,
   setIsValidPresupuesto,
-  gastos
+  gastos,
+  setGastos
 }) {
   return (
       <header>
@@ -15,7 +16,10 @@ function Header({
       {isValidPresupuesto ? (
         <ControlPresupuesto
           gastos={gastos}
+          setGastos={setGastos}
           presupuesto={presupuesto}
+          setPresupuesto={setPresupuesto}
+          setIsValidPresupuesto={setIsValidPresupuesto}
         />
       ) : (
           <NuevoPresupuesto
